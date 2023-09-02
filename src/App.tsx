@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import './App.css';
 import { helloWorld } from './utilities/api/helloWorld'
-import generateAiResponse from './utilities/api/openAPI/generateAiResponse'
+import {generateAiResponse} from './utilities/api/openAPI/generateAiResponse'
 
 export default function App(): any  {
   const [animalInput, setAnimalInput] = useState("");
@@ -33,28 +33,8 @@ export default function App(): any  {
   } 
 
   async function getResponse(event:any) {
-    event.preventDefault();
-    try {
-      const response = await fetch("/utilities/api/openAPI/generateAiResponse", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ animal: animalInput }),
-      });
-
-      const data = await response.json();
-      if (response.status !== 200) {
-        throw data.error || new Error(`Request failed with status ${response.status}`);
-      }
-
-      setResult(data.result);
-      setAnimalInput("");
-    } catch(error:any) {
-      // Consider implementing your own error handling logic here
-      console.error(error);
-      alert(error.message);
-    }
+    console.log('clicked button')
+    generateAiResponse("cat")
   }
 
   return (
