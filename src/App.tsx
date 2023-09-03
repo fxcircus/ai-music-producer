@@ -33,14 +33,18 @@ export default function App(): any  {
   } 
 
   async function getResponse(event:any) {
+    event.preventDefault();
     console.log('clicked button')
-    generateAiResponse("cat")
+    const response:any = await generateAiResponse(animalInput)
+    setResult(response);
+    setAnimalInput("");
   }
 
   return (
     <div className="App">
       <h3>Help me make some music</h3>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={getResponse}>
+        <p>I want to make a song like -</p>
         <input
           type="text"
           name="animal"
@@ -50,8 +54,7 @@ export default function App(): any  {
         />
         <input type="submit" value="Generate instructions" />
       </form>
-      <button onClick={helloWorld}>print hello world to console</button>
-      <button onClick={(e) => getResponse(e)}>Print response from ChatGPT</button>
+      {/* <button onClick={helloWorld}>print hello world to console</button> */}
       <div>{result}</div>
     </div>
   );
