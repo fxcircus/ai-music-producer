@@ -1,10 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
-// import dotenv from 'dotenv';
-// dotenv.config();
 
 const configuration = new Configuration({
-    //   apiKey: process.env.OPENAI_API_KEY,
-    apiKey: "myKey",
+    apiKey: "MyKey",
 });
 console.log(configuration)
 const openai = new OpenAIApi(configuration);
@@ -16,8 +13,8 @@ export async function generateAiResponse(userPrompt: string) {
         return 401;
     }
 
-    const animal = userPrompt;
-    if (animal.trim().length === 0) {
+    const artist = userPrompt;
+    if (artist.trim().length === 0) {
         console.log("Prompt error")
         return 400;
     }
@@ -25,11 +22,11 @@ export async function generateAiResponse(userPrompt: string) {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: generatePrompt(animal),
+      prompt: generatePrompt(artist),
       temperature: 0.6,
     });
     const result = completion.data.choices[0].text
-    console.log(`result: ${result}`)
+    console.log(completion.data)
     return result
   } catch(error:any) {
     if (error.response) {
@@ -40,10 +37,9 @@ export async function generateAiResponse(userPrompt: string) {
   }
 }
 
-function generatePrompt(animal:string) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `I am a musician. I want to compose a song in the style of the band \ artist - ${capitalizedAnimal}
+function generatePrompt(artist:string) {
+  const capitalizedArtist = artist[0].toUpperCase() + artist.slice(1).toLowerCase();
+  return `I am a musician. I want to compose a song in the style of the band or artist: ${capitalizedArtist}
   Give me detailed instructions on how to acheive this,
   walk me through each song part, including an intro, verse, chorus, bridge, and outro`;
 }

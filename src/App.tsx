@@ -2,10 +2,11 @@ import React from 'react';
 import { useState } from "react";
 import './App.css';
 import { helloWorld } from './utilities/api/helloWorld'
-import {generateAiResponse} from './utilities/api/openAPI/generateAiResponse'
+import { generateAiResponse } from './utilities/api/openAPI/generateAiResponse'
+import { gpt3 } from './utilities/api/openAPI/gpt3'
 
 export default function App(): any  {
-  const [animalInput, setAnimalInput] = useState("");
+  const [artistInput, setArtistInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event: any) {
@@ -16,7 +17,7 @@ export default function App(): any  {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput }),
+        body: JSON.stringify({ animal: artistInput }),
       });
 
       const data = await response.json();
@@ -25,7 +26,7 @@ export default function App(): any  {
       }
 
       setResult(data.result);
-      setAnimalInput("");
+      setArtistInput("");
     } catch (error: any) {
       console.error(error);
       alert(error);
@@ -35,9 +36,10 @@ export default function App(): any  {
   async function getResponse(event:any) {
     event.preventDefault();
     console.log('clicked button')
-    const response:any = await generateAiResponse(animalInput)
+    // const response:any = await generateAiResponse(artistInput)
+    const response:any = await gpt3(artistInput)
     setResult(response);
-    setAnimalInput("");
+    setArtistInput("");
   }
 
   return (
@@ -49,8 +51,8 @@ export default function App(): any  {
           type="text"
           name="animal"
           placeholder="Enter artist name"
-          value={animalInput}
-          onChange={(e) => setAnimalInput(e.target.value)}
+          value={artistInput}
+          onChange={(e) => setArtistInput(e.target.value)}
         />
         <input type="submit" value="Generate instructions" />
       </form>
