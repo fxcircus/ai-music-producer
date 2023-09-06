@@ -27,8 +27,7 @@ export default function App(): any  {
   return (
     <div className="App">
       <h3>Help me make some music</h3>
-      <h1>Dummy Data:</h1>
-      <button onClick={getDummyData}>Populate page</button>
+      <button onClick={getDummyData}>Populate page with Dummy Data</button>
       
       {/* <h1>Response from ChatGPT:</h1>
       <form onSubmit={getResponse}>
