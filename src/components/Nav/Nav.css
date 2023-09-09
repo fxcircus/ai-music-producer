@@ -1,0 +1,32 @@
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #D6A2AD;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    margin-right: 5%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+li:hover {
+    background: #979aaa;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
