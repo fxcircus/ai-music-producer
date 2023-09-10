@@ -1,17 +1,19 @@
 :root {
   --black-color: #0D0630;
   --background-color: #65D46E;
+  --li-hover-color: #979aaa;
 }
 
 body, html {
   margin: 0;
   padding: 0;
+  font-family: 'Helvetica';
+  font-weight: bold;
 }
 
 .App {
   text-align: center;
   height: 100vh;
-  /* border: 5px red solid; */
   margin: 0;
   padding: 0;
 }
@@ -19,4 +21,34 @@ body, html {
 .project-area {
   height: 100%;
   background-color: var(--background-color);
+}
+
+button,input {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  font-size: large;
+  color: white;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  margin-right: 5%;
+  border-radius: 5px;
+  padding:5px
+}
+
+button {
+  background-color: var(--black-color);
+}
+
+li:hover {
+  background: var(--li-hover-color);
+}
+
+a {
+  text-decoration: none;
+  color:var(--black-color);
+  font-size: small;
 }

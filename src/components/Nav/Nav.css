@@ -1,7 +1,5 @@
 :root {
-    --black-color: #0D0630;
     --profile-pic-background-color: #D6A2AD;
-    --li-hover-color: #979aaa;
 }
 
 .nav-items {
@@ -20,21 +18,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-li {
-    list-style: none;
-    margin-right: 5%;
-    border-radius: 5px;
-    padding:5px
-}
-
-li:hover {
-    background: var(--li-hover-color);
-}
-
-a {
-    text-decoration: none;
-    color:var(--black-color);
-    font-size: small;
 }

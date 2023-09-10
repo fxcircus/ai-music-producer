@@ -3,8 +3,6 @@ import React from 'react'
 import { useState } from "react";
 import { dummyData } from '../../utilities/aux/dummyData'
 import { gpt3 } from '../../utilities/api/openAPI/gpt3'
-// import logo from '../../../public/logo.png';
-
 
 export default function NewProject() {
     const [artistInput, setArtistInput] = useState("");
