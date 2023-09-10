@@ -1,0 +1,36 @@
+:root {
+    --black-color: #0D0630;
+    --background-color: #65D46E;
+}
+
+.logo-image {
+    max-height: 100px;
+    border: 5px white solid;
+    border-radius: 50%;
+    /* display: flex; */
+    margin-right: 75%;
+}
+
+.new-project {
+    background: var(--background-color);
+    padding: 5px;
+}
+
+button,input {
+    border: none;
+    margin: 1px;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: var(--black-color);
+    padding: 0 10px 0 10px;
+    margin: 0 5px 0 5px
+}
+
+.submit-button:hover {
+    cursor: pointer;
+}

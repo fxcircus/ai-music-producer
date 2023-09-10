@@ -9,9 +9,14 @@ export default function App(): any  {
 
   return (
     <div className="App">
-      <Nav />
-      <NewProject />
-      {/* <Experiment /> */}
+      <div className='navigation-menu'>
+        <Nav />
+      </div>
+      <div className='project-area'>
+        <NewProject />
+        {/* <Experiment /> */}
+      </div>
+      
     </div>
   );
 }
