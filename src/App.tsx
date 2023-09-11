@@ -7,6 +7,7 @@ import Experiment from './components/Experiment/Experiment';
 import Loader from './components/Loader/Loader';
 
 export default function App(): any  {
+  const [ isLoading, setIsLoading ] = useState(false)
 
   return (
     <div className="App">
@@ -14,9 +15,12 @@ export default function App(): any  {
         <Nav />
       </div>
       <div className='project-area'>
-        <NewProject />
+        {isLoading ? (
+          <Loader text="Generating instructions" />
+        ) : (
+          <NewProject setIsLoading={setIsLoading} />
+        )}
         {/* <Experiment /> */}
-        <Loader text="Generating instructions"/>
       </div>
     </div>
   );
