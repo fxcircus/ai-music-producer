@@ -5,26 +5,30 @@ import { gpt3 } from '../../utilities/api/openAPI/gpt3';
 
 interface NewProjectProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setResult: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const NewProject: React.FC<NewProjectProps> = ({ setIsLoading }) => {
+const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
   const [artistInput, setArtistInput] = useState("");
-  const [result, setResult] = useState("");
 
   async function getResponse(event: any) {
     event.preventDefault();
-    setIsLoading(true); // Set isLoading to true before making the request
+    setIsLoading(true);
     console.log('clicked getResponse button');
     // const response:any = await generateAiResponse(artistInput)
     const response: any = await gpt3(artistInput);
     setResult(response);
     setArtistInput("");
-    setIsLoading(false); // Set isLoading back to false after the request is complete
+    setIsLoading(false);
   }
 
   async function getDummyData(event: any) {
+    setIsLoading(true);
     console.log('clicked getDummyData button');
-    setResult(dummyData.choices[0].message.content);
+    setTimeout(() => {
+        setResult(dummyData.choices[0].message.content);
+        setIsLoading(false);
+      }, 2000);
   }
 
   return (
@@ -44,7 +48,6 @@ const NewProject: React.FC<NewProjectProps> = ({ setIsLoading }) => {
       </form>
 
       <button onClick={getDummyData}>Populate page with Dummy Data</button>
-      <div>{result}</div>
     </div>
   );
 }

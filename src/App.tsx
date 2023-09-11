@@ -8,6 +8,7 @@ import Loader from './components/Loader/Loader';
 
 export default function App(): any  {
   const [ isLoading, setIsLoading ] = useState(false)
+  const [result, setResult] = useState("");
 
   return (
     <div className="App">
@@ -18,8 +19,9 @@ export default function App(): any  {
         {isLoading ? (
           <Loader text="Generating instructions" />
         ) : (
-          <NewProject setIsLoading={setIsLoading} />
+          <NewProject setIsLoading={setIsLoading} setResult={setResult} />
         )}
+        <div>{result}</div>
         {/* <Experiment /> */}
       </div>
     </div>
