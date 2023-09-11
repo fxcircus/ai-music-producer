@@ -4,6 +4,7 @@ import { useState } from "react";
 import Nav from './components/Nav/Nav'
 import NewProject from './components/NewProject/NewProject';
 import Experiment from './components/Experiment/Experiment';
+import Loader from './components/Loader/Loader';
 
 export default function App(): any  {
 
@@ -15,8 +16,8 @@ export default function App(): any  {
       <div className='project-area'>
         <NewProject />
         {/* <Experiment /> */}
+        <Loader text="Generating instructions"/>
       </div>
-      
     </div>
   );
 }
