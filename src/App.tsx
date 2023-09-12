@@ -5,7 +5,8 @@ import Nav from './components/Nav/Nav'
 import NewProject from './components/NewProject/NewProject';
 import Experiment from './components/Experiment/Experiment';
 import Loader from './components/Loader/Loader';
-
+import Card
+ from './components/Card/Card';
 export default function App(): any  {
   const [ isLoading, setIsLoading ] = useState(false)
   const [result, setResult] = useState("");
@@ -22,6 +23,7 @@ export default function App(): any  {
           <NewProject setIsLoading={setIsLoading} setResult={setResult} />
         )}
         <div>{result}</div>
+        <Card cardTitle={"Verse"}/>
         {/* <Experiment /> */}
       </div>
     </div>
