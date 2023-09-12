@@ -23,7 +23,7 @@ export default function App(): any  {
           <NewProject setIsLoading={setIsLoading} setResult={setResult} />
         )}
         <div>{result}</div>
-        <Card cardTitle={"Verse"}/>
+        <Card cardTitle={"Verse"} modalText={"Begin with a quiet and atmospheric introduction, possibly using ambient sounds or simple guitar patterns. - Incorporate layered and sustained guitar notes or chords to create a dense texture."}/>
         {/* <Experiment /> */}
       </div>
     </div>

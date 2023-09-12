@@ -4,9 +4,10 @@ import './Card.css'
 
 interface LoaderProps {
     cardTitle?: string;
+    modalText?: string
 }
 
- const Card: FC<LoaderProps> = ({cardTitle}) => {
+ const Card: FC<LoaderProps> = ({cardTitle, modalText}) => {
     const [isOpen, setIsOpen ] = useState(false)
 
     const openCard = () => {
@@ -51,7 +52,7 @@ interface LoaderProps {
                     <span className="close-button" onClick={closeCard}>
                         &times;
                     </span>
-                    <h2>Esse sit proident occaecat minim in dolore et quis proident est et adipisicing eiusmod nulla.</h2>
+                    <h3>{modalText}</h3>
                 </div>
             </div>
             ) : (
