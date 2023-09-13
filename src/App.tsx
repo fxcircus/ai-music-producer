@@ -5,8 +5,8 @@ import Nav from './components/Nav/Nav'
 import NewProject from './components/NewProject/NewProject';
 import Experiment from './components/Experiment/Experiment';
 import Loader from './components/Loader/Loader';
-import Card
- from './components/Card/Card';
+import CurrentProject from './components/CurrentProject/CurrentProject'
+
 export default function App(): any  {
   const [ isLoading, setIsLoading ] = useState(false)
   const [result, setResult] = useState("");
@@ -20,10 +20,12 @@ export default function App(): any  {
         {isLoading ? (
           <Loader text="Generating instructions" />
         ) : (
-          <NewProject setIsLoading={setIsLoading} setResult={setResult} />
-        )}
-        <div>{result}</div>
-        <Card cardTitle={"Verse"} modalText={"Begin with a quiet and atmospheric introduction, possibly using ambient sounds or simple guitar patterns. - Incorporate layered and sustained guitar notes or chords to create a dense texture."}/>
+          result ? (
+            <CurrentProject result={result}  />
+          ) : (
+            <NewProject setIsLoading={setIsLoading} setResult={setResult} />
+          )
+          )}
         {/* <Experiment /> */}
       </div>
     </div>
