@@ -2,6 +2,7 @@ import './NewProject.css';
 import React, { useState } from 'react';
 import { dummyData } from '../../utilities/aux/dummyData';
 import { gpt3 } from '../../utilities/api/openAPI/gpt3';
+import { useNavigate } from 'react-router-dom';
 
 interface NewProjectProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,6 +11,7 @@ interface NewProjectProps {
 
 const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
   const [artistInput, setArtistInput] = useState("");
+  const navigate = useNavigate();
 
   async function getResponse(event: any) {
     event.preventDefault();
@@ -20,6 +22,7 @@ const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
     setResult(response);
     setArtistInput("");
     setIsLoading(false);
+    navigate('/project');
   }
 
   async function getDummyData(event: any) {
@@ -28,6 +31,7 @@ const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
     setTimeout(() => {
         setResult(dummyData.choices[0].message.content);
         setIsLoading(false);
+        navigate('/project');
       }, 2000);
   }
 
