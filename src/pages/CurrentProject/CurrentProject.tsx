@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import './CurrentProject.css'
-import Card from '../Card/Card'
+import Card from '../../components/Card/Card'
 
 interface LoaderProps {
     result: string;
