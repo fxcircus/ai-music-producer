@@ -57,3 +57,5 @@ const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
 }
 
 export default NewProject;
+
+

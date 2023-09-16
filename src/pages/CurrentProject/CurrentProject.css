@@ -1,3 +1,13 @@
+:root {
+    --black-color: #0D0630;
+    --background-color: #65D46E;
+}
+
+.current-project {
+    background-color: var(--background-color);
+    height: 100vh;
+}
+
 .cards-area {
     display:flex;
     flex-direction: row;

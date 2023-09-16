@@ -28,3 +28,16 @@ G
 A
 Bb
 This scale has a slightly different flavor compared to the standard major scale because of the lowered seventh note (Bb instead of B). It gives a folk or country-like feel and can be heard in many Fleet Foxes songs. Combine this scale with intricate vocal harmonies and acoustic instrumentation, and you're on your way to capturing their style.
+
+
+Prompt:
+=======
+What is a good key to write a song in the style of fleet foxes? only show the following-
+Scale name:
+Scale notes:
+Don't write anything else
+
+Response:
+=========
+Scale name: Mixolydian
+Scale notes: G, A, B, C, D, E, F, G
