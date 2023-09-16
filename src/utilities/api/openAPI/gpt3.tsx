@@ -14,7 +14,7 @@ export async function gpt3(userPrompt: string) {
             }
         ],
         "temperature": 1,
-        "max_tokens": 50,
+        "max_tokens": 750,
         "top_p": 1,
         "frequency_penalty": 0,
         "presence_penalty": 0

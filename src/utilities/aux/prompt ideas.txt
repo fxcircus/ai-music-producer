@@ -1,0 +1,30 @@
+Prompt:
+=======
+What is a good key to write a song in the style of fleet foxes? write it like this:
+Scale name:
+Scale notes:
+
+Response:
+=========
+Fleet Foxes often use a folk-inspired sound with rich harmonies and acoustic instrumentation. One key that can work well for writing a song in their style is:
+
+Scale name: Mixolydian Mode
+Scale notes:
+
+Root (tonic)
+Major second
+Major third
+Perfect fourth
+Perfect fifth
+Major sixth
+Minor seventh
+In the key of C, the Mixolydian mode would have the following notes:
+
+C (Root)
+D
+E
+F
+G
+A
+Bb
+This scale has a slightly different flavor compared to the standard major scale because of the lowered seventh note (Bb instead of B). It gives a folk or country-like feel and can be heard in many Fleet Foxes songs. Combine this scale with intricate vocal harmonies and acoustic instrumentation, and you're on your way to capturing their style.
