@@ -7,7 +7,7 @@ interface LoaderProps {
     modalText?: string
 }
 
- const Card: FC<LoaderProps> = ({ cardTitle, modalText }) => {
+ const Card: FC<LoaderProps> = ({ cardTitle, modalText}) => {
     const [isOpen, setIsOpen ] = useState(false)
 
     const openCard = () => {

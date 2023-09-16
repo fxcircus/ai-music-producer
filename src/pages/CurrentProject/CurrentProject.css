@@ -4,8 +4,10 @@
 }
 
 .current-project {
+    color: var(--black-color);
     background-color: var(--background-color);
     height: 100vh;
+    text-align: center;
 }
 
 .cards-area {

@@ -41,3 +41,12 @@ Response:
 =========
 Scale name: Mixolydian
 Scale notes: G, A, B, C, D, E, F, G
+
+
+Prompt:
+=======
+Give me songwriting advice in the style of rick rubin in 2 sentences
+
+Response:
+=========
+Simplify your message and let the emotions flow naturally, and don't be afraid to strip away anything that doesn't serve the song's core essence. Trust your instincts and create music that resonates deeply with you, as genuine artistry often stems from an authentic connection to the music.
