@@ -3,6 +3,7 @@ import './CurrentProject.css'
 import Card from '../../components/Card/Card'
 import PomodoroTimer from "../../components/pomodoroTimer/pomodoroTimer";
 import Divider from "../../components/Divider/Divider";
+import InspirationGenerator from "../../components/inspirationGenerator/inspirationGenerator"
 
 interface LoaderProps {
     result: string;
@@ -50,7 +51,8 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
             </div>
             <Divider />
             <PomodoroTimer />
-
+            <Divider />
+            <InspirationGenerator />
         </div>
     );
 }
