@@ -11,5 +11,7 @@ textarea {
     outline: none;
     background: none;
     font: inherit;
+    color: var(--white-color);
+    font-size: large;
     resize: none;
   }
