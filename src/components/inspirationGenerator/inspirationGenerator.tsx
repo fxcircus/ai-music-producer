@@ -73,9 +73,9 @@ export default function InspirationGenerator() {
 
   return (
     <div className="inspiration-generator">
-      <h3>Inspiration generator:</h3>
+      {/* <h3>Inspiration generator:</h3> */}
       <p className="sub-title">
-        Roll the dice to generate a random rule set. Lock parameters you like
+      <b><u>Inspiration generator:</u></b><br/>Roll the dice to generate a random rule set
       </p>
 
       <i onClick={rollDice} className={`dice fas fa-dice dice-icon ${animate ? "animate" : ""}`} />

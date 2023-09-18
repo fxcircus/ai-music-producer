@@ -53,6 +53,7 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
             <PomodoroTimer />
             <Divider />
             <InspirationGenerator />
+            <Divider />
         </div>
     );
 }
