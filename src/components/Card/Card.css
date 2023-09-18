@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: x-large;
 }
 
 .card-closed:hover, .card-open:hover {
@@ -57,5 +58,13 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-closed {
+        width: 60px; /* Adjust the width for smaller screens */
+        height: 100px; /* Adjust the height for smaller screens */
+        font-size: x-small;
     }
 }

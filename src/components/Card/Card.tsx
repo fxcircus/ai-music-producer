@@ -57,7 +57,7 @@ interface LoaderProps {
             </div>
             ) : (
             <div className="card-closed" onClick={openCard}>
-                <h2>{cardTitle}</h2>
+                <p>{cardTitle}</p>
             </div>
              )}
         </div>
