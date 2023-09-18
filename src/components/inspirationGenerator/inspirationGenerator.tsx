@@ -17,11 +17,11 @@ export default function InspirationGenerator() {
   });
 
   const [animate, setAnimate] = useState(false);
-  const [rootEl, setRootEl] = useState("");
-  const [scaleEl, setScaleEl] = useState("");
-  const [tonesEl, setTonesEl] = useState("");
-  const [bpmEl, setBpmEl] = useState("");
-  const [soundEl, setSoundEl] = useState("");
+  const [rootEl, setRootEl] = useState("C");
+  const [scaleEl, setScaleEl] = useState("Major");
+  const [tonesEl, setTonesEl] = useState("T - T - S - T - T - T - S");
+  const [bpmEl, setBpmEl] = useState("100");
+  const [soundEl, setSoundEl] = useState("Guitar");
 
   // Global Vars and arrays:
   const maxBpm = 140;
