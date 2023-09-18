@@ -35,4 +35,5 @@ th {
 
 .dice:hover, .lock-icon:hover {
     cursor: pointer;
+    color: var(--td-color);
 }
