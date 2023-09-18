@@ -52,7 +52,7 @@ interface LoaderProps {
                     <span className="close-button" onClick={closeCard}>
                         &times;
                     </span>
-                    <h3>{modalText}</h3>
+                    <p>{modalText}</p>
                 </div>
             </div>
             ) : (
