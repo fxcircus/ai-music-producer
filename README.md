@@ -23,6 +23,7 @@ AI Music Producer is an innovative tool that empowers musicians to craft music i
 - openAPI GPT 3.5 Turbo engine
 - Freepik AI Image Generator (logo) image
 - Figma for wireframing
+- Font Awesome for icons
 
 ## Wireframes
 

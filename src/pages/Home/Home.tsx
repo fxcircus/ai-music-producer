@@ -3,7 +3,6 @@ import './Home.css';
 import { useState } from "react";
 import NewProject from '../../components/NewProject/NewProject';
 import Loader from '../../components/Loader/Loader';
-import CurrentProject from '../../pages/CurrentProject/CurrentProject'
 
 interface LoaderProps {
     setResult: React.Dispatch<React.SetStateAction<string>>;
