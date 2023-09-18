@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import './CurrentProject.css'
 import Card from '../../components/Card/Card'
 import PomodoroTimer from "../../components/pomodoroTimer/pomodoroTimer";
-
+import Divider from "../../components/Divider/Divider";
 
 interface LoaderProps {
     result: string;
@@ -48,7 +48,7 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
                     />
                 ))}
             </div>
-
+            <Divider />
             <PomodoroTimer />
 
         </div>
