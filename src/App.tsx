@@ -12,7 +12,7 @@ export default function App(): any  {
   return (
     <BrowserRouter>
       <div className='navigation-menu'>
-        <Nav />
+        <Nav userName='RD'/>
       </div>
       <Routes>
         <Route path="/" element={ <Home setResult={setResult} /> } />

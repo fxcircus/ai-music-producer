@@ -61,7 +61,7 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 772px) {
     .card-closed {
         width: 60px; /* Adjust the width for smaller screens */
         height: 100px; /* Adjust the height for smaller screens */

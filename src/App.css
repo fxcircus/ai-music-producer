@@ -43,10 +43,6 @@ button {
   background-color: var(--black-color);
 }
 
-li:hover {
-  background: var(--li-hover-color);
-}
-
 a {
   text-decoration: none;
   color:var(--black-color);

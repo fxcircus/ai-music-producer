@@ -28,7 +28,7 @@ export default function InspirationGenerator() {
   const minBpm = 75;
   let scaleIdx = 0;
   const roots = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-  const sounds = ["Guitar", "Bass", "Percussion", "Pad", "syncy", "Arp", "Accoustic", "Box", "Coin", "FX", "Lead", "Fuzz", "Harmonics", "Ebox", "Freeze", "Lap Steel"];
+  const sounds = ["Guitar", "Bass", "Percussion", "Pad", "Synth", "Arp", "Accoustic", "Box", "Coin", "FX", "Lead", "Fuzz", "Harmonics", "Ebox", "Freeze", "Lap Steel"];
   const scales = ["Major", "Minor", "Dorial", "Phrygian", "Lydian", "Mixolydian", "Locrian"];
   const scaleTones = ["T - T - S - T - T - T - S", "T - S - T - T - S - T - T", "T - S - T - T - T - S - T", "S - T - T - T - S - T - T", "T - T - S - T - S - T - T", "T - T - S - T - T - S - T", "S - T - T - S - T - T - T"];
 
