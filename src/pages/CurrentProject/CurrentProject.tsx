@@ -46,7 +46,7 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
 
     return (
         <div className="current-project">
-            <h3>To compose a song in the style of *artist*, follow this general structure for each song part:</h3>
+            <p>To compose a song in the style of *artist*, follow this general structure for each song part:</p>
             <div className="cards-area">
                 {cardsArr.map((cardData, index) => (
                     <Card

@@ -1,7 +1,7 @@
 :root {
   --black-color: #0D0630;
   --background-color: #65D46E;
-  --li-hover-color: #979aaa;
+  --white-color: #f1f1f5;
 }
 
 body, html {
@@ -9,6 +9,7 @@ body, html {
   padding: 0;
   font-family: 'Helvetica';
   font-weight: bold;
+  background-color: var(--background-color);
 }
 
 .App {
@@ -18,9 +19,8 @@ body, html {
   padding: 0;
 }
 
-.project-area {
-  height: 100%;
-  background-color: var(--background-color);
+.navigation-menu {
+  background-color: var(--white-color);
 }
 
 button,input {
