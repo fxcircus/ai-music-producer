@@ -2,13 +2,14 @@
     --black-color: #0D0630;
     --background-color: #65D46E;
     --li-hover-color: #979aaa;
+    --white-color: #f1f1f5;
   }
 
 .card-closed {
     width: 150px;
     height: 200px;
     background-color: var(--black-color);
-    color: white;
+    color: var(--white-color);
     border-radius: 5px;
     display: flex;
     justify-content: center;
