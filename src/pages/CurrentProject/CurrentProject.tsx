@@ -10,7 +10,6 @@ interface LoaderProps {
     result: string;
 }
 
-
 const CurrentProject: FC<LoaderProps> = ({ result }) => {
     const [ cardsArr, setCardsArr ] = useState<{ cardTitle: string, modalText: string }[]>([]);
     const [ notes, setNotes ] = useState<string>(''); // Define state to store the notes

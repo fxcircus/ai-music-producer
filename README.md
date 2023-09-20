@@ -24,6 +24,7 @@ AI Music Producer is an innovative tool that empowers musicians to craft music i
 - Freepik AI Image Generator (logo) image
 - Figma for wireframing
 - Font Awesome for icons
+- [Metronone icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/tempo)
 
 ## Wireframes
 
