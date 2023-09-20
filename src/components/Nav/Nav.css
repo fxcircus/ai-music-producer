@@ -1,6 +1,6 @@
 :root {
     --profile-pic-background-color: #D6A2AD;
-    --li-hover-color:#979aaa;
+    --li-hover-color: #65D46E;
 }
 
 .nav-items {
@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin: 1px;
+    margin: 1px;    
 }
 
 .circle {
@@ -26,5 +26,9 @@ li:hover {
 }
 
 .nav-item:hover {
-    background: var(--li-hover-color);
+    color: #D6A2AD;
+}
+
+.circle:hover {
+    color:#f1f1f5;
 }
