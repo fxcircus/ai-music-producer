@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { dummyData } from '../../utilities/aux/dummyData';
 import { gpt3 } from '../../utilities/api/openAPI/gpt3';
 import { useNavigate } from 'react-router-dom';
-import Metronome from '../Metronome/Metronome';
 
 interface NewProjectProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -54,7 +53,6 @@ const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
 
       <button onClick={getDummyData}>Populate page with Dummy Data</button>
 
-      <Metronome bpm={120} />
     </div>
   );
 }

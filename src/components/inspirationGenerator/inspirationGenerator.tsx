@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./inspirationGenerator.css";
+import Metronome from "../Metronome/Metronome";
 
 type LockedState = {
   root: boolean;
@@ -137,6 +138,10 @@ export default function InspirationGenerator() {
           </tr>
         </tbody>
       </table>
+
+      <Metronome bpm={parseInt(bpmEl)} />
+      
+
     </div>
   );
 }
