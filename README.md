@@ -28,14 +28,17 @@ AI Music Producer is an innovative tool that empowers musicians to craft music i
 - Metronone icon created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/tempo)
 - [Tone.js](https://www.npmjs.com/package/tone) for generating metronome tone
 
-## Screenshot of final version
+## Screenshots from live version
 
-![Project page final](/public/project_page_screenshot.png)
+- **The project page**:
+![project_page](/public/project_page_screenshot.png)
+- **Example of AI-generated instructions**: 
+![open_oard](/public/card_modal.png)
 
 
 ## Wireframes
 
 - **Main Wireframe**:
-  ![Main Wireframe](/public/wireframe_main.png)
+  ![main_wireframe](/public/wireframe_main.png)
 - **Project Page Wireframe**:
-  ![Project Page Wireframe](/public/wireframe_project_page.png)
+  ![project_page_w_ireframe](/public/wireframe_project_page.png)
