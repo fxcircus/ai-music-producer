@@ -1,19 +1,20 @@
 # AI Music Producer
 
-AI Music Producer is an innovative tool that empowers musicians to craft music in the style of their favorite artists with the help of cutting-edge AI technology.
+AI Music Producer is an innovative tool that empowers musicians to craft music in the style of their favorite artists with the help of AI technology.
 
 ## How it Works
 
-1. **Artist Selection**: Begin your musical journey by inputting the name of your favorite artist or band.
+1. **Artist Selection**: Begin by inputting the name of your favorite artist or band.
 
-2. **AI Insights**: Our application harnesses the power of OpenAI's GPT engine to provide you with insightful instructions and inspiring ideas on how to compose music in the distinct style of your chosen artist.
+2. **AI Insights**: The app queries OpenAI's GPT engine to provide you with insightful instructions and inspiring ideas on how to compose music in the distinct style of your chosen artist.
 
-3. **Project Page**: Dive into the creative process on a dedicated project page that breaks down your musical composition into key sections: Intro, Verse, Chorus, Bridge, and Outro.
+3. **Project Page**: Dive into the creative process on a dedicated project page that breaks down the musical composition into key sections: Intro, Verse, Chorus, Bridge, and Outro.
 
-4. **Comprehensive Tools**: Our project page is equipped with an array of valuable songwriting tools, including:
-   - **Inspiration and Rule Set Generator**: Craft a unique set of guidelines and creative sparks to shape your composition.
-   - **Pomodoro Timer**: Stay focused and productive with timed work sessions.
-   - **Note-Taking Area**: Capture your thoughts, ideas, and musical concepts as they flow.
+4. **Comprehensive Tools**: The project page is also equipped with an array of valuable songwriting tools, including:
+   - **Inspiration and Rule Set Generator**: Generate a random rule set including Song key, BPM, and Sound ides
+   - **Metronome**: The BPM is set by the inspiration generator
+   - **Pomodoro Timer**: Stay focused and productive with timed work sessions
+   - **Note-Taking Area**: Capture your thoughts, ideas, and musical concepts as they flow
    - **Expert Advice**: Receive valuable songwriting insights in the style of renowned producers and musicians such as Rick Rubin, Jeff Tweedy, and more!
 
 ## Technologies Used
@@ -27,9 +28,13 @@ AI Music Producer is an innovative tool that empowers musicians to craft music i
 - Metronone icon created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/tempo)
 - [Tone.js](https://www.npmjs.com/package/tone) for generating metronome tone
 
+## Screenshot of final version
+
+![Project page final](/public/project_page_screenshot.png)
+
+
 ## Wireframes
 
-Take a sneak peek at our application's wireframes to get a visual sense of what AI Music Producer has to offer:
 - **Main Wireframe**:
   ![Main Wireframe](/public/wireframe_main.png)
 - **Project Page Wireframe**:
