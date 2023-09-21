@@ -8,20 +8,20 @@ interface LoaderProps {
 }
 
 const Metronome: FC<LoaderProps> = ({ bpm }) => {
-    const [metronomePlaying, setMetronomePlaying] = useState(false);
-    const [metronomeDirection, setMetronomeDirection] = useState(false);
+    const [ metronomePlaying, setMetronomePlaying ] = useState(false);
+    const [ metronomeDirection, setMetronomeDirection ] = useState(false);
+    const [ muteSound, setMuteSoud ] = useState(false)
     let intervalId: NodeJS.Timeout | null = null;
-
-    
 
     useEffect(() => {
         if (metronomePlaying) {
-            Tone.start()
+            Tone.start() // 
             const intervalTime = 60000 / bpm; // Calculate interval time based on BPM
             intervalId = setInterval(() => {
-                playSound()
+                if (!muteSound) { playSound() }
                 setMetronomeDirection((prevDirection) => !prevDirection);
             }, intervalTime);
+
         } else if (intervalId !== null) {
             clearInterval(intervalId);
         }
@@ -34,7 +34,7 @@ const Metronome: FC<LoaderProps> = ({ bpm }) => {
     }, [metronomePlaying, bpm]);
 
     const playSound = () => {
-        // Initialize the Tone.js context
+        // Initialize synth values
         const synth = new Tone.Synth({
           oscillator: {
             type: 'square',
@@ -46,17 +46,14 @@ const Metronome: FC<LoaderProps> = ({ bpm }) => {
             release: 0.1,
           },
         }).toDestination();
-    
-        // Lower the volume
-        synth.volume.value = -42; // Adjust this value to control the volume (in decibels)
-    
+        // Adjust this value to control the volume (in decibels)
+        synth.volume.value = -42; 
         // Play a note
         const now = Tone.now()
         synth.triggerAttackRelease('440', '8n', now);
-    
         // Clean up when the component unmounts
         return () => {
-          synth.dispose();
+          synth.dispose(); 
         };
       }
 
@@ -67,6 +64,15 @@ const Metronome: FC<LoaderProps> = ({ bpm }) => {
                 src={process.env.PUBLIC_URL + '/metronome.png'} alt="Metronome"
                 onClick={() => setMetronomePlaying(!metronomePlaying)}
             />
+            <div onClick={(e) => { setMuteSoud(!muteSound) }}>
+                { muteSound ? (
+                    <i className="fas fa-volume-mute sound-off-icon" />
+                ) : (
+                    <i className="fas fa-volume-up sound-on-icon" />
+                )}
+                
+                
+            </div>
         </div>
     )
 }
