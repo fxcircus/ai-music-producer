@@ -54,7 +54,7 @@ const NewProject: React.FC<NewProjectProps> = ({ setIsLoading, setResult }) => {
 
       <button onClick={getDummyData}>Populate page with Dummy Data</button>
 
-      <Metronome bpm={60} />
+      <Metronome bpm={120} />
     </div>
   );
 }

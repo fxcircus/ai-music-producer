@@ -12,11 +12,14 @@ const Metronome: FC<LoaderProps> = ({ bpm }) => {
     const [metronomeDirection, setMetronomeDirection] = useState(false);
     let intervalId: NodeJS.Timeout | null = null;
 
+    
+
     useEffect(() => {
-        playSound()
         if (metronomePlaying) {
+            Tone.start()
             const intervalTime = 60000 / bpm; // Calculate interval time based on BPM
             intervalId = setInterval(() => {
+                playSound()
                 setMetronomeDirection((prevDirection) => !prevDirection);
             }, intervalTime);
         } else if (intervalId !== null) {
@@ -43,13 +46,19 @@ const Metronome: FC<LoaderProps> = ({ bpm }) => {
             release: 0.1,
           },
         }).toDestination();
-      
-        synth.volume.value = -10; // Adjust this value to control the volume (in decibels)
-        
-        synth.triggerAttackRelease('C4', '8n'); // Play a note
-      
-        synth.dispose(); // Clean up
-      };
+    
+        // Lower the volume
+        synth.volume.value = -42; // Adjust this value to control the volume (in decibels)
+    
+        // Play a note
+        const now = Tone.now()
+        synth.triggerAttackRelease('440', '8n', now);
+    
+        // Clean up when the component unmounts
+        return () => {
+          synth.dispose();
+        };
+      }
 
     return (
         <div>
