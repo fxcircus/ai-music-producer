@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import Nav from './components/Nav/Nav'
 import CurrentProject from './pages/CurrentProject/CurrentProject';
+import AboutPage from './pages/About/About';
 
 export default function App(): any  {
   const [result, setResult] = useState("");
@@ -17,6 +18,7 @@ export default function App(): any  {
       <Routes>
         <Route path="/" element={ <Home setResult={setResult} /> } />
         <Route path="/project" element={ <CurrentProject result={result}  /> } />
+        <Route path="/about" element={ <AboutPage /> } />
       </Routes>
     </BrowserRouter>
   );
