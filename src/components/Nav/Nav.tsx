@@ -1,6 +1,8 @@
-import React, { FC } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { FC, useState, useEffect } from "react";
+
 import './Nav.css';
+import { useNavigate } from 'react-router-dom';
+import { dummyProjects } from '../../utilities/aux/dummyProjects';
 
 interface LoaderProps {
   userName: string;
@@ -9,6 +11,10 @@ interface LoaderProps {
 const Nav: FC<LoaderProps> = ({ userName }) => {
   const navigate = useNavigate();
   
+  useEffect(() => {
+    console.log(dummyProjects)
+  }, [])
+
   return (
     <nav>
       <ul className='nav-items'>
