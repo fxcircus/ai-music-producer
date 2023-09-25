@@ -1,6 +1,11 @@
 :root {
-    --profile-pic-background-color: #D6A2AD;
+    --profile-pic-background-color: hsl(347, 39%, 74%);
     --li-hover-color: #65D46E;
+    --white-color: #f1f1f5;
+}
+
+p {
+    margin: 2px 10px ;
 }
 
 .nav-items {
@@ -34,7 +39,7 @@ li:hover {
 }
 
 .nav-container {
-    position: relative;
+  position: relative;
 }
 
 .project-title {
@@ -46,24 +51,24 @@ li:hover {
 }
 
 .menu-items {
-    position: absolute;
-    top: 100%; /* Position it below the "Projects" list item */
-    left: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  position: absolute;
+  top: 100%;
+  right: 20%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
   
 .menu-item {
-    width: 100%; /* Set the width to fill the container */
-    text-align: center; /* Center-align the text */
-    padding: 5px 0; /* Add padding for better spacing */
-    background-color: #333; /* Background color for better visibility */
-    color: white; /* Text color */
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #333;
+    color: var(--white-color);
     cursor: pointer;
     transition: 0.3s;
 }
   
 .menu-item:hover {
-    background-color: #555; /* Background color on hover */
+    background-color: #555;
 }

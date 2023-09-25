@@ -14,6 +14,7 @@ const Nav: FC<LoaderProps> = ({ userName }) => {
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    console.log(isOpen)
   };
 
   useEffect(() => {
@@ -29,12 +30,13 @@ const Nav: FC<LoaderProps> = ({ userName }) => {
   const handleDocumentClick = (event: MouseEvent) => {
     // Check if the click occurred outside of the menu and not inside any menu item
     if (menuRef.current && !(menuRef.current as HTMLElement).contains(event.target as Node)) {
-      setIsOpen(false);
+      setIsOpen(false)
     }
   };
 
-  const handleMenuItemClick = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent the click event from propagating to the document
+  const openProject = (projectId: string) => {
+    setIsOpen(false)
+    navigate(`/projects/${projectId}`)
   };
 
   return (
@@ -50,7 +52,7 @@ const Nav: FC<LoaderProps> = ({ userName }) => {
       {isOpen && (
         <ul className='menu-items' ref={menuRef}>
           {dummyProjects.map((project, index) => (
-            <div key={index} className="menu-item" onClick={handleMenuItemClick}>
+            <div key={index} className="menu-item" onClick={(e) => {openProject(project.id) }}>
               <p className="project-title">{project.name}</p>
               <p className="project-date">{project.date}</p>
             </div>
