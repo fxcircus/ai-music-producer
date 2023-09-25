@@ -19,6 +19,7 @@ export default function App(): any  {
         <Route path="/" element={ <Home setResult={setResult} /> } />
         <Route path="/project" element={ <CurrentProject result={result}  /> } />
         <Route path="/about" element={ <AboutPage /> } />
+        <Route path="/projects/:id" element={ <CurrentProject result='id' /> } /> 
       </Routes>
     </BrowserRouter>
   );

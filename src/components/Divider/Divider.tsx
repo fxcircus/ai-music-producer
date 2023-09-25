@@ -1,8 +1,8 @@
 import React from 'react';
-import './Divider.css'; // Import the CSS file
+import './Divider.css';
 
 const Divider: React.FC = () => {
-  return <div className="divider"></div>; // Use the CSS class
+  return <div className="divider"></div>;
 };
 
 export default Divider;
