@@ -7,6 +7,7 @@ import Nav from './components/Nav/Nav'
 import CurrentProject from './pages/CurrentProject/CurrentProject';
 import AboutPage from './pages/About/About';
 
+
 export default function App(): any  {
   const [result, setResult] = useState("");
 
