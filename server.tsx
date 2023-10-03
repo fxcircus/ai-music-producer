@@ -1,6 +1,6 @@
 require('dotenv').config()
 require('./backend/config/database');
-const projectController = require('../../controllers/api/projects');
+const projectController = require('./backend/controllers/project');
 
 // Initialize express
 const express = require('express')
