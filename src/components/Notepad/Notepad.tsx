@@ -2,11 +2,11 @@ import React, { useEffect, useState, ChangeEvent } from 'react';
 import "./Notepad.css"
 
 interface NotesProps {
-  saveProject: (data: { notesVal: string }) => void;
   notes: string;
+  setNotes: (notes: string) => void;
 }
 
-export default function Notes({ saveProject, notes }: NotesProps) {
+export default function Notes({ notes, setNotes }: NotesProps) {
   const [text, setText] = useState<{ newText: string }>({ newText: '' });
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -16,10 +16,6 @@ export default function Notes({ saveProject, notes }: NotesProps) {
   useEffect(() => {
     setText({ newText: notes });
   }, [notes]);
-
-  useEffect(() => {
-    saveProject({ notesVal: text.newText });
-  }, [text, saveProject]);
 
   return (
     <div className='notepad'>

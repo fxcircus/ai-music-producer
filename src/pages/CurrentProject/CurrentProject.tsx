@@ -86,7 +86,7 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
                 soundEl={soundEl}   setSoundEl={setSoundEl}
             />
             <Divider />
-            <NotePad saveProject={saveProject} notes={notes} />
+            <NotePad notes={notes} setNotes={setNotes} />
         </div>
     );
 }
