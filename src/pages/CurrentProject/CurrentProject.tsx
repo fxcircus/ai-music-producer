@@ -24,16 +24,18 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
     const userId = "e2ae9614-aae6-4887-b4a9-3194305d8847" // temp value
 
     // Upload to MongoDB
-    const saveProject = (data: { notesVal: string }) => {
-        const porjectData = {   userId,
-                                result,
-                                notes,
-                                rootEl,
-                                scaleEl,
-                                tonesEl,
-                                bpmEl,
-                                soundEl}
-        uploadProjectToMongo(porjectData)
+    const saveProject = () => {
+        const projectData = {
+            userId:     userId,
+            result:     result,
+            notes:      notes,
+            rootEl:     rootEl,
+            scaleEl:    scaleEl,
+            tonesEl:    tonesEl,
+            bpmEl:      bpmEl,
+            soundEl:    soundEl
+          };
+        uploadProjectToMongo(projectData)
     };
 
     const processResults = (resStr: string): { cardTitle: string, modalText: string }[] => {
@@ -64,6 +66,7 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
 
     return (
         <div className="current-project">
+            <button onClick={ () => {saveProject()} }>Save</button>
             <h4>{prefix}</h4>
             <div className="cards-area">
                 {cardsArr.map((cardData, index) => (
