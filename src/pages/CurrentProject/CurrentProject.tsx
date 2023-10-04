@@ -14,6 +14,12 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
     const [ cardsArr, setCardsArr ] = useState<{ cardTitle: string, modalText: string }[]>([]);
     const [ notes, setNotes ] = useState<string>(''); // Define state to store the notes
     const [ prefix, setPrefix ] = useState("")
+    const [animate, setAnimate] = useState(false);
+    const [rootEl, setRootEl] = useState("C");
+    const [scaleEl, setScaleEl] = useState("Major");
+    const [tonesEl, setTonesEl] = useState("T - T - S - T - T - T - S");
+    const [bpmEl, setBpmEl] = useState("100");
+    const [soundEl, setSoundEl] = useState("Guitar");
 
     const processResults = (resStr: string): { cardTitle: string, modalText: string }[] => {
         setPrefix(resStr.substring(0, resStr.indexOf("1. Intro:")));
@@ -63,7 +69,14 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
             <Divider />
             <PomodoroTimer />
             <Divider />
-            <InspirationGenerator />
+            <InspirationGenerator 
+                animate={animate}   setAnimate={setAnimate}
+                rootEl={rootEl}     setRootEl={setRootEl}
+                scaleEl={scaleEl}   setScaleEl={setScaleEl}
+                tonesEl={tonesEl}   setTonesEl={setTonesEl}
+                bpmEl={bpmEl}       setBpmEl={setBpmEl}
+                soundEl={soundEl}   setSoundEl={setSoundEl}
+            />
             <Divider />
             <NotePad saveProject={saveProject} notes={notes} />
         </div>

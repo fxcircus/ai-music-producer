@@ -9,7 +9,35 @@ type LockedState = {
   sound: boolean;
 };
 
-export default function InspirationGenerator() {
+interface componentProps {
+  animate: boolean;
+  setAnimate: (animate: boolean) => void;
+  rootEl: string;
+  setRootEl: (rootEl: string) => void;
+  scaleEl: string;
+  setScaleEl: (scaleEl: string) => void;
+  tonesEl: string;
+  setTonesEl: (tonesEl: string) => void;
+  bpmEl: string;
+  setBpmEl: (bpmEl: string) => void;
+  soundEl: string;
+  setSoundEl: (soundEl: string) => void;
+}
+
+export default function InspirationGenerator({
+  animate,
+  setAnimate,
+  rootEl,
+  setRootEl,
+  scaleEl,
+  setScaleEl,
+  tonesEl,
+  setTonesEl,
+  bpmEl,
+  setBpmEl,
+  soundEl,
+  setSoundEl,
+}: componentProps) {
   const [locked, setLocked] = useState<LockedState>({
     root: false,
     scaleAndTones: false,
@@ -17,21 +45,57 @@ export default function InspirationGenerator() {
     sound: false,
   });
 
-  const [animate, setAnimate] = useState(false);
-  const [rootEl, setRootEl] = useState("C");
-  const [scaleEl, setScaleEl] = useState("Major");
-  const [tonesEl, setTonesEl] = useState("T - T - S - T - T - T - S");
-  const [bpmEl, setBpmEl] = useState("100");
-  const [soundEl, setSoundEl] = useState("Guitar");
-
   // Global Vars and arrays:
   const maxBpm = 140;
   const minBpm = 75;
   let scaleIdx = 0;
-  const roots = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-  const sounds = ["Guitar", "Bass", "Percussion", "Pad", "Synth", "Arp", "Accoustic", "Box", "Coin on strings", "FX", "Lead", "Fuzz", "Harmonics", "Ebox", "Freeze pedal", "Lap Steel", "Piano", "Violin", "Cello", "Banjo", "Whistle", "Birdsong", "Helicopter rotor", "Siren", "Space shuttle", "Alarm clock", ];
-  const scales = ["Major", "Minor", "Dorial", "Phrygian", "Lydian", "Mixolydian", "Locrian"];
-  const scaleTones = ["T - T - S - T - T - T - S", "T - S - T - T - S - T - T", "T - S - T - T - T - S - T", "S - T - T - T - S - T - T", "T - T - S - T - S - T - T", "T - T - S - T - T - S - T", "S - T - T - S - T - T - T"];
+  const roots = [ "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" ];
+  const sounds = [
+    "Guitar",
+    "Bass",
+    "Percussion",
+    "Pad",
+    "Synth",
+    "Arp",
+    "Accoustic",
+    "Box",
+    "Coin on strings",
+    "FX",
+    "Lead",
+    "Fuzz",
+    "Harmonics",
+    "Ebox",
+    "Freeze pedal",
+    "Lap Steel",
+    "Piano",
+    "Violin",
+    "Cello",
+    "Banjo",
+    "Whistle",
+    "Birdsong",
+    "Helicopter rotor",
+    "Siren",
+    "Space shuttle",
+    "Alarm clock",
+  ];
+  const scales = [
+    "Major",
+    "Minor",
+    "Dorial",
+    "Phrygian",
+    "Lydian",
+    "Mixolydian",
+    "Locrian",
+  ];
+  const scaleTones = [
+    "T - T - S - T - T - T - S",
+    "T - S - T - T - S - T - T",
+    "T - S - T - T - T - S - T",
+    "S - T - T - T - S - T - T",
+    "T - T - S - T - S - T - T",
+    "T - T - S - T - T - S - T",
+    "S - T - T - S - T - T - T",
+  ];
 
   // Random Index Generator Function:
   const getIndex = (num: number) => {
@@ -42,8 +106,12 @@ export default function InspirationGenerator() {
 
   const rollDice = () => {
     setAnimate(false);
-    if (!locked.root) { setRootEl(roots[getIndex(roots.length)]) }
-    if (!locked.sound) { setSoundEl(sounds[getIndex(sounds.length)]) }
+    if (!locked.root) {
+      setRootEl(roots[getIndex(roots.length)]);
+    }
+    if (!locked.sound) {
+      setSoundEl(sounds[getIndex(sounds.length)]);
+    }
     if (!locked.scaleAndTones) {
       setScaleEl(scales[getIndex(scales.length)]);
       setTonesEl(scaleTones[scaleIdx]);
@@ -74,12 +142,18 @@ export default function InspirationGenerator() {
 
   return (
     <div className="inspiration-generator">
-      {/* <h3>Inspiration generator:</h3> */}
       <p className="sub-title">
-      <b><u>Inspiration generator:</u></b><br/>Roll the dice to generate a random rule set
+        <b>
+          <u>Inspiration generator:</u>
+        </b>
+        <br />
+        Roll the dice to generate a random rule set
       </p>
 
-      <i onClick={rollDice} className={`dice fas fa-dice dice-icon ${animate ? "animate" : ""}`} />
+      <i
+        onClick={rollDice}
+        className={`dice fas fa-dice dice-icon ${animate ? "animate" : ""}`}
+      />
 
       <table>
         <tbody>
@@ -108,7 +182,7 @@ export default function InspirationGenerator() {
             <td className="td-value">{scaleEl}</td>
           </tr>
           <tr>
-            <th/>
+            <th />
             <td>Tones</td>
             <td className="td-value">{tonesEl}</td>
           </tr>
@@ -140,8 +214,6 @@ export default function InspirationGenerator() {
       </table>
 
       <Metronome bpm={parseInt(bpmEl)} />
-      
-
     </div>
   );
 }
