@@ -5,6 +5,7 @@ import PomodoroTimer from "../../components/pomodoroTimer/pomodoroTimer";
 import Divider from "../../components/Divider/Divider";
 import InspirationGenerator from "../../components/inspirationGenerator/inspirationGenerator"
 import NotePad from "../../components/Notepad/Notepad"
+import { uploadProjectToMongo } from "../../utilities/api/project/project";
 
 interface LoaderProps {
     result: string;
@@ -20,6 +21,20 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
     const [tonesEl, setTonesEl] = useState("T - T - S - T - T - T - S");
     const [bpmEl, setBpmEl] = useState("100");
     const [soundEl, setSoundEl] = useState("Guitar");
+    const userId = "e2ae9614-aae6-4887-b4a9-3194305d8847" // temp value
+
+    // Upload to MongoDB
+    const saveProject = (data: { notesVal: string }) => {
+        const porjectData = {   userId,
+                                result,
+                                notes,
+                                rootEl,
+                                scaleEl,
+                                tonesEl,
+                                bpmEl,
+                                soundEl}
+        uploadProjectToMongo(porjectData)
+    };
 
     const processResults = (resStr: string): { cardTitle: string, modalText: string }[] => {
         setPrefix(resStr.substring(0, resStr.indexOf("1. Intro:")));
@@ -41,13 +56,6 @@ const CurrentProject: FC<LoaderProps> = ({ result }) => {
     
         return cardData;
     }
-
-    // Function to save the project with updated notes
-    const saveProject = (data: { notesVal: string }) => {
-        // You can perform actions to save the project with the updated notes here.
-        // For this example, we'll simply update the notes in the state.
-        setNotes(data.notesVal);
-    };
 
     useEffect(() => {
         const processedData = processResults(result);

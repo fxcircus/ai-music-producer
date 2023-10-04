@@ -10,20 +10,16 @@ const projectSchema = new Schema({
         ref: 'User',
         required: true
     },
-    gptResponse: {
+    result: {
         type: String,
         required: true
     },
-    userEmail: String,
-    title: String,
-    timeVal: Number,
-    rootVal: String,
-    scaleVal: String,
-    tonesVal: String,
-    bpmVal: Number,
-    soundVal: String,
-    itemsVal: Array,
-    notesVal: String,
+    notes: String,
+    rootEl: String,
+    scaleEl: String,
+    tonesEl: String,
+    bpmEl: Number,
+    soundEl: String,
 }, {
     timestamps: true
 })

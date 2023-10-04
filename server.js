@@ -9,11 +9,11 @@ const port = 8000
 const router = express.Router()
 
 // Routes
-router.get("/",                     projectController.getProjects) 
-router.get('/projects/:projectId',  projectController.getProject)
-router.post('/',                    projectController.setProject)
-router.put('/:projectId',           projectController.updateProject)
-router.delete('/:projectId',        projectController.deleteProject)
+router.get("/api/",                     projectController.getProjects) 
+router.get('/api/projects/:projectId',  projectController.getProject)
+router.post('/api/project',             projectController.setProject)
+router.put('/api/:projectId',           projectController.updateProject)
+router.delete('/api/:projectId',        projectController.deleteProject)
 
 // Start server
 app.listen(port,() => {
