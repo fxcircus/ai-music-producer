@@ -24,6 +24,7 @@ const getProject = (req,res) => {
 
 // POST
 const setProject = async (req, res) => {
+  console.log("New POST req!")
     try {
         const { body } = req
         const createdProject = await Project.create(body)

@@ -1,5 +1,5 @@
 import { sendRequest } from "../sendRequest";
-const BASE_URL = '/api/project'
+const BASE_URL = 'http://localhost:8000/api/project'
 
 interface ProjectData {
     result: string;
