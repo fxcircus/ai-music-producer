@@ -1,4 +1,4 @@
-const Project = require('../models/Project') 
+const Project = require('../models/Project')
 
 // GET all projects
 const getProjects = (req, res) => {
@@ -24,7 +24,7 @@ const getProject = (req,res) => {
 
 // POST
 const setProject = async (req, res) => {
-  console.log("New POST req!")
+  console.log("New POST request received!");
     try {
         const { body } = req
         const createdProject = await Project.create(body)
@@ -58,9 +58,9 @@ const deleteProject = (req, res) => {
 }
 
 module.exports = {
-    getProjects,
-    getProject,
-    setProject,
-    updateProject,
-    deleteProject
+  getProjects,
+  getProject,
+  setProject,
+  updateProject,
+  deleteProject
 }

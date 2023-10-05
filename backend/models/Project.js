@@ -1,15 +1,8 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
 
-const projectSchema = new Schema({
-    // projectId: {
-    //     type: Schema.Types.ObjectId,
-    //     required: true
-    // },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
+// Define the schema for the Project model
+const projectSchema = new mongoose.Schema({
+    userId: String,
     result: {
         type: String,
         required: true
@@ -19,9 +12,10 @@ const projectSchema = new Schema({
     scaleEl: String,
     tonesEl: String,
     bpmEl: Number,
-    soundEl: String,
+    soundEl: String
 }, {
     timestamps: true
-})
+});
 
-module.exports = projectSchema;
+const Project = mongoose.model('Project', projectSchema);
+module.exports = Project;
