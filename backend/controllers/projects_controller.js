@@ -1,4 +1,4 @@
-const Project = require('../models/Project')
+const Project = require('../models/Project_model')
 
 // GET all projects
 const getProjects = (req, res) => {

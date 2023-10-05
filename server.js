@@ -11,7 +11,7 @@ const app = express()
 app.use(cors());
 app.use(logger('dev'))
 app.use(express.json())
-app.use('/api/projects', require('./backend/routes/projects.js'))
+app.use('/api/projects', require('./backend/routes/projects_routes.js'))
 
 // Start server
 const port = 8000
