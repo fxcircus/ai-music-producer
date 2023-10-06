@@ -32,8 +32,8 @@ export async function getProjects() {
   
     return sendRequest(`${BASE_URL}`, 'GET')
       .then((response) => {
-          console.log("Response Data:", response.data);
-          return response.data;
+          console.log("Response Data:", response);
+          return response;
       })
       .catch((error) => {
           console.error("Error:", error);
