@@ -1,14 +1,13 @@
 const Project = require('../models/Project_model')
 
 // GET all projects
-const getProjects = (req, res) => {
-    Project.find({}, (err, foundProject) => {
-        if (!err) {
-          res.status(200).json(foundProject)
-        } else {
-          res.status(400).json(err)
-        }
-    })
+const getProjects = async (req, res) => {
+  try {
+      const foundProjects = await Project.find({})
+      res.status(200).json(foundProjects)
+  } catch (err) {
+      res.status(400).json(err)
+  }
 }
 
 // GET project by projectId

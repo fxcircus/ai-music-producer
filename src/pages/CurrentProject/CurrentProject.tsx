@@ -5,7 +5,7 @@ import PomodoroTimer from "../../components/pomodoroTimer/pomodoroTimer";
 import Divider from "../../components/Divider/Divider";
 import InspirationGenerator from "../../components/inspirationGenerator/inspirationGenerator"
 import NotePad from "../../components/Notepad/Notepad"
-import { uploadProjectToMongo } from "../../utilities/api/project/project";
+import { uploadProjectToMongo } from "../../utilities/api/projects/projects";
 
 interface LoaderProps {
     result: string;

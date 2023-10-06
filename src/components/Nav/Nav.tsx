@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect, useRef } from "react";
 import './Nav.css';
 import { useNavigate } from 'react-router-dom';
 import { dummyProjects } from '../../utilities/aux/dummyProjects';
+import { getProjects } from "../../utilities/api/projects/projects";
 
 interface LoaderProps {
   userName: string;
@@ -27,6 +28,15 @@ const Nav: FC<LoaderProps> = ({ userName }) => {
     };
   }, []);
 
+  const getProjectIds = async () => {
+    const projectIds = await getProjects()
+    console.log(projectIds)
+  }
+
+  useEffect(() => {
+    getProjectIds()
+  }, [])
+
   const handleDocumentClick = (event: MouseEvent) => {
     // Check if the click occurred outside of the menu and not inside any menu item
     if (menuRef.current && !(menuRef.current as HTMLElement).contains(event.target as Node)) {
@@ -38,6 +48,8 @@ const Nav: FC<LoaderProps> = ({ userName }) => {
     setIsOpen(false)
     navigate(`/projects/${projectId}`)
   };
+
+
 
   return (
     <nav className='nav-container'>

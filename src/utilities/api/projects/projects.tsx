@@ -25,3 +25,18 @@ export async function uploadProjectToMongo(projectData: ProjectData) {
         throw error;
     });
 }
+
+
+export async function getProjects() {
+    console.log("Sending GET request to:", BASE_URL);
+  
+    return sendRequest(`${BASE_URL}`, 'GET')
+      .then((response) => {
+          console.log("Response Data:", response.data);
+          return response.data;
+      })
+      .catch((error) => {
+          console.error("Error:", error);
+          throw error;
+      });
+  }
